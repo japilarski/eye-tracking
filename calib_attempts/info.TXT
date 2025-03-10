@@ -1,0 +1,18 @@
+Directory and scripts used to test and make attempts in calibration and correction of gaze points to make L2CS 
+script runner.py work better. Results are not predictable and not so significant most of the time, but can
+affect and in some ways correct gaze vectors, however here are documented example done tests.
+
+*calibration_test.py*  is script used to measure 9 gaze vectors predicted by l2CS while user
+is looking at 9 points at the screen (top left, top middle, top right, left middle, screen center, right middle,
+down left,down middle, down right), user clicks "enter" after looking at one point and the averaged gaze vector 
+after 10 measures is saved, the thing is done 9 times and results are saved to calibration_data.txt
+
+*show_cal_points.py* enables to visualize gaze points in 3d plot after and before corrections 
+in this example it uses linear regression, but there are probably better ways.
+
+*runner.py* is modified in the way that it can use calibration_data.txt and expected points values together
+with linear regression(this can be change for sure for something better) to make some "calibration"
+changes to every gaze vector showed live.
+
+linear regression calibv2.png shows example before and after correction of the points and every possible point between them
+that can be affected in the same way in runner.py 
